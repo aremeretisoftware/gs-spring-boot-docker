@@ -2,8 +2,8 @@ resources:
   - name: myGitRepo
     type: GitRepo
     configuration:
-      gitProvider: my_github
-      path: batelt/gs-spring-boot-docker
+      gitProvider: GIT
+      path: aremeretisoftware/gs-spring-boot-docker
       branches:
         include: master
   - name: myBuildInfo
@@ -77,4 +77,4 @@ pipelines:
             - name: my_github
         execution:
           onExecute:
-            - 'curl -H "Authorization: token ${int_my_github_token}" ${int_my_github_url}/rate_limit'
+            - 'curl -H "Authorization: token ${int_GIT_token}" ${int_GIT_url}/rate_limit'
